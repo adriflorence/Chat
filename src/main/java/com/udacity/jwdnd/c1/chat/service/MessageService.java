@@ -1,21 +1,36 @@
 package com.udacity.jwdnd.c1.chat.service;
 
+import com.udacity.jwdnd.c1.chat.mapper.MessageMapper;
+import com.udacity.jwdnd.c1.chat.model.ChatForm;
+import com.udacity.jwdnd.c1.chat.model.ChatMessage;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
-public class MessageListService {
+public class MessageService {
 
-    private List<String> messages;
+    private MessageMapper messageMapper;
 
     // Spring AutoConfiguration will search for a bean that matches the constructor parameter
-    public MessageListService(){
-        this.messages = new ArrayList<>();
+    public MessageService(MessageMapper messageMapper){
+        this.messageMapper = messageMapper;
     }
 
-    public void addMessage(String message){
-        messages.add(message);
+    public List<ChatMessage> getChatMessages() {
+        return null;
+    }
+
+    // this is called immediately after MessageService Bean created and placed in App Context
+    // good for handling initialisation logic
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("Creating MessageService Bean");
+    }
+
+    public void addMessage(ChatForm chatForm){
+        ChatMessage newMessage = new ChatMessage();
+        newMessage.setUsername(chatForm.getUsername());
     }
 }
