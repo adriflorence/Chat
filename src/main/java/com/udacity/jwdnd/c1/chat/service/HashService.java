@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.c1.review.service;
+package com.udacity.jwdnd.c1.chat.service;
 
 import org.springframework.stereotype.Component;
 

@@ -18,10 +18,6 @@ public class MessageService {
         this.messageMapper = messageMapper;
     }
 
-    public List<ChatMessage> getChatMessages() {
-        return null;
-    }
-
     // this is called immediately after MessageService Bean created and placed in App Context
     // good for handling initialisation logic
     @PostConstruct
@@ -32,5 +28,13 @@ public class MessageService {
     public void addMessage(ChatForm chatForm){
         ChatMessage newMessage = new ChatMessage();
         newMessage.setUsername(chatForm.getUsername());
+        newMessage.setMessageText("Some random text");
+        // TODO handles message type cases
+
+        messageMapper.addMessage(newMessage);
+    }
+
+    public List<ChatMessage> getChatMessages() {
+        return messageMapper.getAllMessages();
     }
 }
