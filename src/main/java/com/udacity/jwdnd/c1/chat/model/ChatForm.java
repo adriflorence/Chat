@@ -1,9 +1,11 @@
-package com.udacity.jwdnd.c1.review.model;
+package com.udacity.jwdnd.c1.chat.model;
 
 public class ChatForm {
 
-    private String messageText;
     private String username;
+    private String messageText;
+    private String messageType;
+
 
     public String getMessageText() {
         return messageText;
@@ -17,8 +19,15 @@ public class ChatForm {
         this.messageText = messageText;
     }
 
-
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
     }
 }
