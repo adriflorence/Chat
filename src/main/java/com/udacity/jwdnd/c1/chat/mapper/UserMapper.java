@@ -1,6 +1,6 @@
-package com.udacity.jwdnd.c1.review.mapper;
+package com.udacity.jwdnd.c1.chat.mapper;
 
-import com.udacity.jwdnd.c1.review.model.User;
+import com.udacity.jwdnd.c1.chat.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
