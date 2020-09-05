@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.c1.review.model;
+package com.udacity.jwdnd.c1.chat.model;
 
 public class ChatMessage {
 
