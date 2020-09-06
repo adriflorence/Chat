@@ -4,6 +4,9 @@ import com.udacity.jwdnd.c1.chat.mapper.UserMapper;
 import com.udacity.jwdnd.c1.chat.model.User;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
+import java.util.Base64;
+
 @Service
 public class UserService {
 
@@ -20,9 +23,12 @@ public class UserService {
     }
 
     public int createUser(User user){
-        String salt = "salt";
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[16];
+        random.nextBytes(salt);
+        String encodedSalt = Base64.getEncoder().encodeToString(salt);
         String pw = "password";
-        return userMapper.insert(new User(null, user.getUsername(), salt, pw, user.getFirstName(), user.getLastName()));
+        return userMapper.insert(new User(null, user.getUsername(), encodedSalt, pw, user.getFirstName(), user.getLastName()));
     }
 
     public User getUser(String username){
