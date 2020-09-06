@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.c1.review;
+package com.udacity.jwdnd.c1.chat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
